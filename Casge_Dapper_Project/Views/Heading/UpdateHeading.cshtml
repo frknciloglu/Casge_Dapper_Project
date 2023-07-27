@@ -1,0 +1,32 @@
+﻿@model Casge_Dapper_Project.DAL.Entities.Headings
+
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br />
+    <br />
+    <form method="post">
+        <label>Başlık Adı Giriniz</label>
+        <input type="text" asp-for="HeadingName" class="form-control" />
+        <br />
+        <label>Başlık Durum</label>
+        @if (Model.HeadingStatus == true)
+        {
+           
+            <input type="checkbox" asp-for="HeadingStatus" value="true" checked/>
+        }
+        else
+        {
+            <input type="checkbox" asp-for="HeadingStatus" value="false" />
+
+        }
+        
+
+        <br />
+        <input type="hidden" asp-for="HeadinID"/>
+        <button class="btn btn-primary">Başlığı Ekle</button>
+    </form>
+</div>
